@@ -49,7 +49,7 @@ namespace ProjetoDocx
 
                     documento.ReplaceText("#inicioPeriodoReclamado", tbDataIniPeriodo.Text);
                     documento.ReplaceText("#fimPeriodoReclamado", tbDataFimPeriodo.Text);
-
+                    // #inicioPeriodoReclamado #fimPeriodoReclamado
                     tx = tbFuncaoExercida.Text;
                     documento.ReplaceText("#FUNCAO", tx.ToUpper());
 
@@ -195,6 +195,36 @@ namespace ProjetoDocx
                 return false;
             }
 
+        }        
+
+        private void ExcluirDaLista(ListBox lb, List<string> lista)
+        {
+            if (lb.Items.Contains(lb.Text))
+            {
+                string caption = "Tem certeza que quer remover?";
+                string message = lb.Text;
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    lista.RemoveAt(lb.SelectedIndex);
+                    lb.DataSource = null;
+                    lb.DataSource = lista;
+                }
+            }
+        }
+
+        private void cmsi_RemoveReclamante(object sender, ToolStripItemClickedEventArgs e)
+        {            
+            ExcluirDaLista(lboxReclamante, listAcReclamante);
+        }
+
+        private void cmsi_RemoveReclamada(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ExcluirDaLista(lboxReclamada, listAcReclamada);
         }
 
         private void Inicio(object sender, EventArgs e)
