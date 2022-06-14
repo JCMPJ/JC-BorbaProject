@@ -17,8 +17,8 @@ namespace ProjetoDocx
 {
     public partial class Form1 : Form
     {
-        List<string> listAcReclamante = new List<string>();
-        List<string> listAcReclamada = new List<string>();
+        readonly List<string> listAcReclamante = new List<string>();
+        readonly List<string> listAcReclamada = new List<string>();
 
         public Form1()
         {
@@ -109,7 +109,7 @@ namespace ProjetoDocx
                 if (txtParagrafo.IndexOf("#PeloReclamante") >= 0)
                 {
                     nomes = "";
-                    foreach(string n in listAcReclamante)
+                    foreach (string n in listAcReclamante)
                     {
                         nomes += "\t" + n + "\r\n";
                     }
@@ -120,7 +120,7 @@ namespace ProjetoDocx
                     paragrafo.Range.Font.Name = "Arial";
                     paragrafo.Range.Font.Bold = 0;
                     paragrafo.Range.Text = nomes;
-                    
+
                 }
                 else if (txtParagrafo.IndexOf("#PelaReclamada") >= 0)
                 {
@@ -167,12 +167,12 @@ namespace ProjetoDocx
             }
         }
 
-        private void btnInsLwReclamante_Click(object sender, EventArgs e)
+        private void BTN_InsLwReclamante_Click(object sender, EventArgs e)
         {
             this.InserirNaLista(tbTesReclamante, lboxReclamante, listAcReclamante);
         }
 
-        private void btnInsLwReclamada_Click(object sender, EventArgs e)
+        private void BTN_InsLwReclamada_Click(object sender, EventArgs e)
         {
             this.InserirNaLista(tbTesReclamada, lboxReclamada, listAcReclamada);
         }
@@ -195,11 +195,18 @@ namespace ProjetoDocx
                 return false;
             }
 
-        }        
+        }
 
-        private void ExcluirDaLista(ListBox lb, List<string> lista)
+        private void EditarExcluir(string acao, ListBox lb, List<string> lista)
         {
-            if (lb.Items.Contains(lb.Text))
+            // Editar
+            if (acao == "smEditar" || acao == "editarReclamada")
+            {
+                Form_EditarAcompanhante form_EditarAcompanhante = new Form_EditarAcompanhante(lb.Text, this, lb, lista);
+                form_EditarAcompanhante.ShowDialog();
+            }
+            // Excluir
+            if (acao == "smExcluir" || acao == "excluirReclamada")
             {
                 string caption = "Tem certeza que quer remover?";
                 string message = lb.Text;
@@ -217,19 +224,48 @@ namespace ProjetoDocx
             }
         }
 
-        private void cmsi_RemoveReclamante(object sender, ToolStripItemClickedEventArgs e)
-        {            
-            ExcluirDaLista(lboxReclamante, listAcReclamante);
+        internal void EditarAcompanhante(string nome, string nomeAnterior, ListBox lb, List<string> lista)
+        {
+            Console.WriteLine("FORA DO IF Nome:..." + nome + "Nome anterior:..." + nomeAnterior);
+            if (!nome.Equals(nomeAnterior))
+            {
+                Console.WriteLine("DENTRO DO IF Nome:..." + nome + "Nome anterior:..." + nomeAnterior);
+                lista[lb.SelectedIndex] = nome;
+                lb.DataSource = null;
+                lb.DataSource = lista;
+            }
         }
 
-        private void cmsi_RemoveReclamada(object sender, ToolStripItemClickedEventArgs e)
+        private void CMSI_EditarRemoverReclamante(object sender, ToolStripItemClickedEventArgs e)
         {
-            ExcluirDaLista(lboxReclamada, listAcReclamada);
+            string btnNome = e.ClickedItem.Name.ToString();
+            // (smExcluir, smEditar): Reclamante; editarReclamada, excuirReclamada
+            ListBox lb;
+            List<string> li;
+            lb = lboxReclamante;
+            li = listAcReclamante;
+            EditarExcluir(btnNome, lb, li);
+        }
+
+        private void CMSI_EditarRemoverReclamada(object sender, ToolStripItemClickedEventArgs e)
+        {
+            string btnNome = e.ClickedItem.Name.ToString();
+            // (smExcluir, smEditar): Reclamante; editarReclamada, excuirReclamada
+            ListBox lb;
+            List<string> li;
+            lb = lboxReclamada;
+            li = listAcReclamada;
+            EditarExcluir(btnNome, lb, li);
         }
 
         private void Inicio(object sender, EventArgs e)
         {
             tbProcesso.Focus();
+        }
+
+        private void LboxAcompanhantesReclamante_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

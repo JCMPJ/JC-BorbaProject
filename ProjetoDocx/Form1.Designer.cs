@@ -61,15 +61,22 @@
             this.btnInsLwReclamada = new System.Windows.Forms.Button();
             this.tbTesReclamada = new System.Windows.Forms.TextBox();
             this.lboxReclamante = new System.Windows.Forms.ListBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lboxAcompanhantesReclamante = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.smEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.smExcluir = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarReclamante = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirReclamante = new System.Windows.Forms.ToolStripMenuItem();
             this.lboxReclamada = new System.Windows.Forms.ListBox();
+            this.lboxAcompanhantesReclamada = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarReclamada = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirReclamada = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lb_Reclamante = new System.Windows.Forms.Label();
             this.lb_Reclamada = new System.Windows.Forms.Label();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.lboxAcompanhantesReclamante.SuspendLayout();
+            this.lboxAcompanhantesReclamada.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,13 +105,14 @@
             // 
             // tbReclamante
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this.tbReclamante, 3);
             resources.ApplyResources(this.tbReclamante, "tbReclamante");
             this.tbReclamante.Name = "tbReclamante";
             // 
             // tbReclamada
             // 
-            resources.ApplyResources(this.tbReclamada, "tbReclamada");
             this.tableLayoutPanel1.SetColumnSpan(this.tbReclamada, 3);
+            resources.ApplyResources(this.tbReclamada, "tbReclamada");
             this.tbReclamada.Name = "tbReclamada";
             // 
             // label4
@@ -124,8 +132,8 @@
             // 
             // tbLocalVistoria
             // 
-            resources.ApplyResources(this.tbLocalVistoria, "tbLocalVistoria");
             this.tableLayoutPanel1.SetColumnSpan(this.tbLocalVistoria, 3);
+            resources.ApplyResources(this.tbLocalVistoria, "tbLocalVistoria");
             this.tbLocalVistoria.Name = "tbLocalVistoria";
             // 
             // tbEndLocal
@@ -254,7 +262,7 @@
             resources.ApplyResources(this.btnInsLwReclamante, "btnInsLwReclamante");
             this.btnInsLwReclamante.Name = "btnInsLwReclamante";
             this.btnInsLwReclamante.UseVisualStyleBackColor = true;
-            this.btnInsLwReclamante.Click += new System.EventHandler(this.btnInsLwReclamante_Click);
+            this.btnInsLwReclamante.Click += new System.EventHandler(this.BTN_InsLwReclamante_Click);
             // 
             // btnInsLwReclamada
             // 
@@ -262,7 +270,7 @@
             resources.ApplyResources(this.btnInsLwReclamada, "btnInsLwReclamada");
             this.btnInsLwReclamada.Name = "btnInsLwReclamada";
             this.btnInsLwReclamada.UseVisualStyleBackColor = true;
-            this.btnInsLwReclamada.Click += new System.EventHandler(this.btnInsLwReclamada_Click);
+            this.btnInsLwReclamada.Click += new System.EventHandler(this.BTN_InsLwReclamada_Click);
             // 
             // tbTesReclamada
             // 
@@ -272,32 +280,76 @@
             // 
             // lboxReclamante
             // 
-            this.lboxReclamante.ContextMenuStrip = this.contextMenuStrip1;
+            this.lboxReclamante.ContextMenuStrip = this.lboxAcompanhantesReclamante;
             this.lboxReclamante.FormattingEnabled = true;
             resources.ApplyResources(this.lboxReclamante, "lboxReclamante");
             this.lboxReclamante.Name = "lboxReclamante";
             // 
-            // contextMenuStrip1
+            // lboxAcompanhantesReclamante
             // 
-            this.contextMenuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lboxAcompanhantesReclamante.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lboxAcompanhantesReclamante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smEditar,
             this.smExcluir});
-            this.contextMenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
-            this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.cmsi_RemoveReclamante);
+            this.lboxAcompanhantesReclamante.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.lboxAcompanhantesReclamante.Name = "contextMenuStrip1";
+            this.lboxAcompanhantesReclamante.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            resources.ApplyResources(this.lboxAcompanhantesReclamante, "lboxAcompanhantesReclamante");
+            this.lboxAcompanhantesReclamante.Opening += new System.ComponentModel.CancelEventHandler(this.LboxAcompanhantesReclamante_Opening);
+            this.lboxAcompanhantesReclamante.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.CMSI_EditarRemoverReclamante);
+            // 
+            // smEditar
+            // 
+            this.smEditar.Name = "smEditar";
+            resources.ApplyResources(this.smEditar, "smEditar");
             // 
             // smExcluir
             // 
             this.smExcluir.Name = "smExcluir";
             resources.ApplyResources(this.smExcluir, "smExcluir");
             // 
+            // editarReclamante
+            // 
+            this.editarReclamante.Name = "editarReclamante";
+            resources.ApplyResources(this.editarReclamante, "editarReclamante");
+            // 
+            // excluirReclamante
+            // 
+            this.excluirReclamante.Name = "excluirReclamante";
+            resources.ApplyResources(this.excluirReclamante, "excluirReclamante");
+            // 
             // lboxReclamada
             // 
-            this.lboxReclamada.ContextMenuStrip = this.contextMenuStrip2;
+            this.lboxReclamada.ContextMenuStrip = this.lboxAcompanhantesReclamada;
             this.lboxReclamada.FormattingEnabled = true;
             resources.ApplyResources(this.lboxReclamada, "lboxReclamada");
             this.lboxReclamada.Name = "lboxReclamada";
+            // 
+            // lboxAcompanhantesReclamada
+            // 
+            this.lboxAcompanhantesReclamada.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lboxAcompanhantesReclamada.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarReclamada,
+            this.excluirReclamada});
+            this.lboxAcompanhantesReclamada.Name = "contextMenuStrip2";
+            this.lboxAcompanhantesReclamada.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            resources.ApplyResources(this.lboxAcompanhantesReclamada, "lboxAcompanhantesReclamada");
+            this.lboxAcompanhantesReclamada.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.CMSI_EditarRemoverReclamada);
+            // 
+            // editarReclamada
+            // 
+            this.editarReclamada.Name = "editarReclamada";
+            resources.ApplyResources(this.editarReclamada, "editarReclamada");
+            // 
+            // excluirReclamada
+            // 
+            this.excluirReclamada.Name = "excluirReclamada";
+            resources.ApplyResources(this.excluirReclamada, "excluirReclamada");
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // lb_Reclamante
             // 
@@ -317,12 +369,7 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             resources.ApplyResources(this.contextMenuStrip2, "contextMenuStrip2");
-            this.contextMenuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.cmsi_RemoveReclamada);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.contextMenuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.CMSI_EditarRemoverReclamada);
             // 
             // Form1
             // 
@@ -344,7 +391,8 @@
             this.Enter += new System.EventHandler(this.Inicio);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.lboxAcompanhantesReclamante.ResumeLayout(false);
+            this.lboxAcompanhantesReclamada.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -386,10 +434,16 @@
         private System.Windows.Forms.TextBox tbFuncaoExercida;
         private System.Windows.Forms.Label lb_Reclamante;
         private System.Windows.Forms.Label lb_Reclamada;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem smExcluir;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ContextMenuStrip lboxAcompanhantesReclamante;
+        private System.Windows.Forms.ToolStripMenuItem excluirReclamante;
+        private System.Windows.Forms.ContextMenuStrip lboxAcompanhantesReclamada;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem smExcluir;
+        private System.Windows.Forms.ToolStripMenuItem editarReclamante;
+        private System.Windows.Forms.ToolStripMenuItem editarReclamada;
+        private System.Windows.Forms.ToolStripMenuItem excluirReclamada;
+        private System.Windows.Forms.ToolStripMenuItem smEditar;
     }
 }
 

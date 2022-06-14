@@ -129,7 +129,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnMontar.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>17</value>
   </data>
   <data name="btnMontar.Text" xml:space="preserve">
     <value>Gerar Documento</value>
@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMontar.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -237,30 +237,6 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="tbReclamante.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 27</value>
-  </data>
-  <data name="tbReclamante.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
-  </data>
-  <data name="tbReclamante.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;tbReclamante.Name" xml:space="preserve">
-    <value>tbReclamante</value>
-  </data>
-  <data name="&gt;&gt;tbReclamante.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbReclamante.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tbReclamante.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tbReclamada.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -321,6 +297,27 @@
   <data name="&gt;&gt;tbProcesso.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="tbReclamada.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 51</value>
+  </data>
+  <data name="tbReclamada.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 20</value>
+  </data>
+  <data name="tbReclamada.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbReclamada.Name" xml:space="preserve">
+    <value>tbReclamada</value>
+  </data>
+  <data name="&gt;&gt;tbReclamada.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbReclamada.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tbReclamada.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="tbDataVistoria.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -374,9 +371,6 @@
   </data>
   <data name="&gt;&gt;tbHoraInicio.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="tbLocalVistoria.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
   </data>
   <data name="tbLocalVistoria.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 123</value>
@@ -820,31 +814,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label13" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbProcesso" Row="0" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbReclamante" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tbReclamada" Row="2" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbDataVistoria" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tbHoraInicio" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbLocalVistoria" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbEndLocal" Row="6" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="label4" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbDataIniPeriodo" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbDataEmissao" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbCidadeEmissao" Row="10" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbDataFimPeriodo" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Funcao" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbFuncaoExercida" Row="8" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,117,Absolute,83,Absolute,30,Absolute,120" /&gt;&lt;Rows Styles="Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label13" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbProcesso" Row="0" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbReclamante" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbReclamada" Row="2" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbDataVistoria" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tbHoraInicio" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbLocalVistoria" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbEndLocal" Row="6" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="label4" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbDataIniPeriodo" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbDataEmissao" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbCidadeEmissao" Row="10" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbDataFimPeriodo" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Funcao" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbFuncaoExercida" Row="8" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,117,Absolute,83,Absolute,30,Absolute,120" /&gt;&lt;Rows Styles="Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="tbReclamada.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 51</value>
+  <data name="tbReclamante.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 27</value>
   </data>
-  <data name="tbReclamada.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tbReclamante.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 20</value>
   </data>
-  <data name="tbReclamada.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="tbReclamante.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;tbReclamada.Name" xml:space="preserve">
-    <value>tbReclamada</value>
+  <data name="&gt;&gt;tbReclamante.Name" xml:space="preserve">
+    <value>tbReclamante</value>
   </data>
-  <data name="&gt;&gt;tbReclamada.Type" xml:space="preserve">
+  <data name="&gt;&gt;tbReclamante.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tbReclamada.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tbReclamante.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;tbReclamada.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;tbReclamante.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tbTesReclamante.Location" type="System.Drawing.Point, System.Drawing">
     <value>400, 78</value>
@@ -865,7 +859,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbTesReclamante.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnInsLwReclamante.Location" type="System.Drawing.Point, System.Drawing">
     <value>550, 78</value>
@@ -886,7 +880,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInsLwReclamante.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="btnInsLwReclamada.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -910,7 +904,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInsLwReclamada.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tbTesReclamada.Location" type="System.Drawing.Point, System.Drawing">
     <value>626, 78</value>
@@ -931,18 +925,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbTesReclamada.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
-  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="lboxAcompanhantesReclamante.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 12</value>
   </metadata>
-  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 26</value>
+  <data name="smEditar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
   </data>
-  <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
-    <value>contextMenuStrip1</value>
+  <data name="smEditar.Text" xml:space="preserve">
+    <value>Editar</value>
   </data>
-  <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
+  <data name="smExcluir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="smExcluir.Text" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="lboxAcompanhantesReclamante.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 48</value>
+  </data>
+  <data name="&gt;&gt;lboxAcompanhantesReclamante.Name" xml:space="preserve">
+    <value>lboxAcompanhantesReclamante</value>
+  </data>
+  <data name="&gt;&gt;lboxAcompanhantesReclamante.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lboxReclamante.Location" type="System.Drawing.Point, System.Drawing">
@@ -964,30 +970,42 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lboxReclamante.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
-  <data name="smExcluir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 22</value>
+  <data name="editarReclamante.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="smExcluir.Text" xml:space="preserve">
+  <data name="editarReclamante.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="excluirReclamante.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="excluirReclamante.Text" xml:space="preserve">
     <value>Excluir</value>
   </data>
-  <metadata name="contextMenuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>172, 17</value>
+  <metadata name="lboxAcompanhantesReclamada.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>277, 11</value>
   </metadata>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="editarReclamada.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 22</value>
   </data>
-  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+  <data name="editarReclamada.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="excluirReclamada.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="excluirReclamada.Text" xml:space="preserve">
     <value>Excluir</value>
   </data>
-  <data name="contextMenuStrip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 48</value>
+  <data name="lboxAcompanhantesReclamada.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 48</value>
   </data>
-  <data name="&gt;&gt;contextMenuStrip2.Name" xml:space="preserve">
-    <value>contextMenuStrip2</value>
+  <data name="&gt;&gt;lboxAcompanhantesReclamada.Name" xml:space="preserve">
+    <value>lboxAcompanhantesReclamada</value>
   </data>
-  <data name="&gt;&gt;contextMenuStrip2.Type" xml:space="preserve">
+  <data name="&gt;&gt;lboxAcompanhantesReclamada.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lboxReclamada.Location" type="System.Drawing.Point, System.Drawing">
@@ -1009,7 +1027,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lboxReclamada.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Excluir</value>
   </data>
   <data name="lb_Reclamante.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1036,7 +1060,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lb_Reclamante.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lb_Reclamada.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1063,7 +1087,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lb_Reclamada.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <metadata name="contextMenuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>277, 11</value>
+  </metadata>
+  <data name="contextMenuStrip2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 26</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip2.Name" xml:space="preserve">
+    <value>contextMenuStrip2</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1080,10 +1116,40 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Laudo Pericial</value>
   </data>
+  <data name="&gt;&gt;smEditar.Name" xml:space="preserve">
+    <value>smEditar</value>
+  </data>
+  <data name="&gt;&gt;smEditar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;smExcluir.Name" xml:space="preserve">
     <value>smExcluir</value>
   </data>
   <data name="&gt;&gt;smExcluir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editarReclamante.Name" xml:space="preserve">
+    <value>editarReclamante</value>
+  </data>
+  <data name="&gt;&gt;editarReclamante.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;excluirReclamante.Name" xml:space="preserve">
+    <value>excluirReclamante</value>
+  </data>
+  <data name="&gt;&gt;excluirReclamante.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editarReclamada.Name" xml:space="preserve">
+    <value>editarReclamada</value>
+  </data>
+  <data name="&gt;&gt;editarReclamada.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;excluirReclamada.Name" xml:space="preserve">
+    <value>excluirReclamada</value>
+  </data>
+  <data name="&gt;&gt;excluirReclamada.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
