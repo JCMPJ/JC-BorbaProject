@@ -15,12 +15,14 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace ProjetoDocx
 {
-    public partial class Form1 : Form
+    public partial class RegisterForm : Form
     {
         readonly List<string> listAcReclamante = new List<string>();
         readonly List<string> listAcReclamada = new List<string>();
 
-        public Form1()
+        Laudo laudo = new Laudo();
+
+        public RegisterForm()
         {
             InitializeComponent();
         }
@@ -29,28 +31,44 @@ namespace ProjetoDocx
         {
             string tx;
             string path = Directory.GetCurrentDirectory();
+            /*
+            string nprocesso;
+            string nomeReclamante;
+            string nomeReclamada;
+            string data;
+            string hora;
+            string datahora;
+            */            
             try
             {
                 using (DocX documento = DocX.Load(path + "\\modelo-v01.docx"))
                 {
                     tx = tbProcesso.Text;
+                    laudo.numProcesso = tx.Replace(',', '.');
                     documento.ReplaceText("#numProcesso", tx.Replace(',', '.'));
 
                     tx = tbReclamante.Text;
+                    laudo.nomeReclamante = tx.ToUpper();
                     documento.ReplaceText("#nomeReclamante", tx.ToUpper());
 
                     tx = tbReclamada.Text;
+                    laudo.nomeReclamada = tx.ToUpper();
                     documento.ReplaceText("#nomeReclamada", tx.ToUpper());
-
                     documento.ReplaceText("#dataVistoria", tbDataVistoria.Text);
+                    laudo.dataVistoria = tbDataVistoria.Text;
                     documento.ReplaceText("#horaVistoria", tbHoraInicio.Text);
+                    laudo.horaVistoria = tbHoraInicio.Text;
                     documento.ReplaceText("#localVistoriado", tbLocalVistoria.Text);
+                    laudo.localVistoriado = tbLocalVistoria.Text;
                     documento.ReplaceText("#enderecoVistoriado", tbEndLocal.Text);
-
-                    documento.ReplaceText("#inicioPeriodoReclamado", tbDataIniPeriodo.Text);
-                    documento.ReplaceText("#fimPeriodoReclamado", tbDataFimPeriodo.Text);
+                    laudo.enderecoVistoriado = tbEndLocal.Text;
                     // #inicioPeriodoReclamado #fimPeriodoReclamado
+                    documento.ReplaceText("#inicioPeriodoReclamado", tbDataIniPeriodo.Text);
+                    laudo.dataInicioPeriodoReclamado = tbDataIniPeriodo.Text;
+                    documento.ReplaceText("#fimPeriodoReclamado", tbDataFimPeriodo.Text);
+                    laudo.dataFimPeriodoReclamado = tbDataFimPeriodo.Text;                    
                     tx = tbFuncaoExercida.Text;
+                    laudo.funcaoExercida = tx.ToUpper();
                     documento.ReplaceText("#FUNCAO", tx.ToUpper());
 
                     // Montar local e data da emissão do laudo
@@ -67,6 +85,9 @@ namespace ProjetoDocx
                         strmes = meses[Int32.Parse(mes)];
                         ano = arrDMA[2];
                         data = $"{tbCidadeEmissao.Text}, {dia} de {strmes} de {ano}";
+                        
+                        laudo.cidadeEmissao = tbCidadeEmissao.Text;
+                        laudo.dataEmissao = dma;
 
                         documento.ReplaceText("#localDataEmissao", data);
                     }
@@ -87,6 +108,11 @@ namespace ProjetoDocx
             //this.Close();
         }
 
+        /*
+         * Função Criada para complemantar DocX (mais métodos do que somente
+         * ReplaceText). Especificamente selecionar e alterar paragrafos,
+         * salvar o documento e abrir-lo no Word.
+         */
         private void AbrirDoc(string nomeDoc)
         {
             object oMissing = System.Reflection.Missing.Value;
@@ -121,6 +147,8 @@ namespace ProjetoDocx
                     paragrafo.Range.Font.Bold = 0;
                     paragrafo.Range.Text = nomes;
 
+                    laudo.acompanhantesReclamante = nomes;
+
                 }
                 else if (txtParagrafo.IndexOf("#PelaReclamada") >= 0)
                 {
@@ -136,12 +164,18 @@ namespace ProjetoDocx
                     paragrafo.Range.Font.Name = "Arial";
                     paragrafo.Range.Font.Bold = 0;
                     paragrafo.Range.Text = nomes;
+
+                    laudo.acompanhantesReclamada = nomes;
                 }
             }
+            // Abre o documento no Word
             oWord.Visible = true;
+            // Salva o novo laudo no banco de dados
+            DB.CreateNew(laudo);
             try
             {
-                //oDoc.Save();
+                // Abre a janela Salvar Arquivo do Windows
+                oDoc.Save();               
             }
             catch (Exception e)
             {
@@ -153,7 +187,7 @@ namespace ProjetoDocx
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13)
-            {
+            {                
                 TextBox tb = (TextBox)sender;
                 string str = tb.Name;
                 if (str == "tbTesReclamante")

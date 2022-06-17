@@ -1,6 +1,6 @@
 ﻿namespace ProjetoDocx
 {
-    partial class Form1
+    partial class RegisterForm
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.btnMontar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -371,7 +371,7 @@
             resources.ApplyResources(this.contextMenuStrip2, "contextMenuStrip2");
             this.contextMenuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.CMSI_EditarRemoverReclamada);
             // 
-            // Form1
+            // RegisterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -385,7 +385,7 @@
             this.Controls.Add(this.tbTesReclamante);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnMontar);
-            this.Name = "Form1";
+            this.Name = "RegisterForm";
             this.Activated += new System.EventHandler(this.Inicio);
             this.Load += new System.EventHandler(this.Inicio);
             this.Enter += new System.EventHandler(this.Inicio);

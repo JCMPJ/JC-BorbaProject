@@ -18,10 +18,10 @@ namespace ProjetoDocx
         readonly string nomeVelho = empty;
         readonly ListBox lbo;
         readonly List<string> lis;
-        readonly Form1 form1;
+        readonly RegisterForm form1;
         
 
-        public Form_EditarAcompanhante(string nome, Form1 parent, ListBox lb, List<string> li)
+        public Form_EditarAcompanhante(string nome, RegisterForm parent, ListBox lb, List<string> li)
         {
             InitializeComponent();
 

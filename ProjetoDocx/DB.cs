@@ -1,0 +1,94 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
+using System.Windows.Forms;
+
+namespace ProjetoDocx
+{
+    class DB
+    {
+        private static SQLiteConnection conn;
+
+        public static SQLiteConnection Conectar()
+        {
+            string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+            string connString = "Data Source=" + appPath + "\\dbdocX.db";
+
+            conn = new SQLiteConnection(connString);
+            conn.Open();
+            return conn;
+        }
+
+        public static DataTable Listar()
+        {
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da = new SQLiteDataAdapter();
+
+            try
+            {
+                using (var cmd = Conectar().CreateCommand())
+                {
+                    cmd.CommandText = @"SELECT name FROM tests";
+                    da = new SQLiteDataAdapter(cmd.CommandText, Conectar());
+                    da.Fill(dt);
+                    return dt;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void CreateNew(Laudo laudo)
+        {
+            try
+            {
+                var cmd = DB.Conectar().CreateCommand();
+
+                string sql = "INSERT INTO laudos (" +
+                    "numProcesso, nomeReclamante, nomeReclamada, dataVistoria, horaVistoria, localVistoriado, " +
+                    "enderecoVistoriado, dataInicioPeriodoReclamado, dataFimPeriodoReclamado, " +                    
+                    "funcaoExercida, cidadeEmissao, dataEmissao, " +
+                    "acompanhantesReclamante, acompanhantesReclamada) " +
+                    "VALUES (" +
+                    "@numProcesso, @nomeReclamante, @nomeReclamada, @dataVistoria, @horaVistoria, @localVistoriado, " +
+                    "@enderecoVistoriado, @dataInicioPeriodoReclamado, @dataFimPeriodoReclamado, " +
+                    "@funcaoExercida, @cidadeEmissao, @dataEmissao, @acompanhantesReclamante, @acompanhantesReclamada)";
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@numProcesso", laudo.numProcesso);
+                cmd.Parameters.AddWithValue("@nomeReclamante", laudo.nomeReclamante);
+                cmd.Parameters.AddWithValue("@nomeReclamada", laudo.nomeReclamada);
+                cmd.Parameters.AddWithValue("@dataVistoria", laudo.dataVistoria);
+                cmd.Parameters.AddWithValue("@horaVistoria", laudo.horaVistoria);
+                cmd.Parameters.AddWithValue("@localVistoriado", laudo.localVistoriado);
+                cmd.Parameters.AddWithValue("@enderecoVistoriado", laudo.enderecoVistoriado);
+                cmd.Parameters.AddWithValue("@dataInicioPeriodoReclamado", laudo.dataInicioPeriodoReclamado);
+                cmd.Parameters.AddWithValue("@dataFimPeriodoReclamado", laudo.dataFimPeriodoReclamado);
+                cmd.Parameters.AddWithValue("@funcaoExercida", laudo.funcaoExercida);
+                cmd.Parameters.AddWithValue("@cidadeEmissao", laudo.cidadeEmissao);
+                cmd.Parameters.AddWithValue("@dataEmissao", laudo.dataEmissao);
+                cmd.Parameters.AddWithValue("@acompanhantesReclamante", laudo.acompanhantesReclamante);
+                cmd.Parameters.AddWithValue("@acompanhantesReclamada", laudo.acompanhantesReclamada);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Novo Laudo Cadastrado!");
+
+                DB.Conectar().Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao tentar cadastrar");
+                Console.WriteLine(ex.Message);
+            }            
+        }
+    }
+}
