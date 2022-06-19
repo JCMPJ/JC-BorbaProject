@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="DB.cs" />
     <Compile Include="Laudo.cs" />
+    <Compile Include="ManageFiles.cs" />
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>

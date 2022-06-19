@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xceed.Words.NET;
@@ -19,6 +20,8 @@ namespace ProjetoDocx
     {
         readonly List<string> listAcReclamante = new List<string>();
         readonly List<string> listAcReclamada = new List<string>();
+        readonly string homepag = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        readonly string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
 
         Laudo laudo = new Laudo();
 
@@ -46,7 +49,7 @@ namespace ProjetoDocx
                     tx = tbProcesso.Text;
                     laudo.numProcesso = tx.Replace(',', '.');
                     documento.ReplaceText("#numProcesso", tx.Replace(',', '.'));
-
+                    
                     tx = tbReclamante.Text;
                     laudo.nomeReclamante = tx.ToUpper();
                     documento.ReplaceText("#nomeReclamante", tx.ToUpper());
@@ -170,16 +173,54 @@ namespace ProjetoDocx
             }
             // Abre o documento no Word
             oWord.Visible = true;
+
             // Salva o novo laudo no banco de dados
             DB.CreateNew(laudo);
+            
+            /*
+             * Montar o mone do arquivo último id gravado no banco mais um + número do processo +
+             * data atual na forma ddmmaaa
+             */
+            int aux = DB.MaxId() + 1;
+            string sequential_number = Convert.ToString(aux);
+
+            if (aux < 10)
+            {
+                sequential_number = "00" + sequential_number;
+            }
+            else if (aux < 100)
+            {
+                sequential_number = "0" + sequential_number;
+            }
+
+            /* Formato ("d) 25/3/2022 */
+            DateTime thisDay = DateTime.Today;           
+            Console.WriteLine(thisDay.ToString("d"));
+            Regex rgx = new Regex("/");
+            string data = rgx.Replace(thisDay.ToString("d"), "");
+
+            /* Monta nome do documento número sequencial + número do processo + data no formato ddmmaaaa */
+            string nome_doc = sequential_number + "-" + tbProcesso.Text.Replace(',', '.') + "-" + data + ".docx";
+
+            /* Monta nome da pasta onde o documento será salvo
+             * Caminho da aplicação + \laudos\ + número do precesso
+             * (homepag + "\\Documents\\laudos\\)
+             */
+            string str_path = appPath + "\\laudos\\" + tbProcesso.Text.Replace(',', '.') + "\\";
+
+            /* Caso a pasta não exista cria */
+            string path_str = ManageFiles.CreateDirectories(str_path);
+
+            /* Salva o documento com o nome montado na pasta \laudos\número do processo */
             try
             {
                 // Abre a janela Salvar Arquivo do Windows
-                oDoc.Save();               
+                // oDoc.Save(); 
+                oDoc.SaveAs2(path_str + nome_doc);
             }
             catch (Exception e)
             {
-                DialogResult dialogResult = MessageBox.Show(e.Message);
+                DialogResult dialogResult = MessageBox.Show(e.Message,"Error!",0,MessageBoxIcon.Exclamation);
                 oDoc = null;
             }
         }

@@ -28,5 +28,10 @@ namespace ProjetoDocx
             SearchForm searchForm = new SearchForm();
             searchForm.ShowDialog();
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

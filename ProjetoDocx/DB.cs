@@ -34,7 +34,7 @@ namespace ProjetoDocx
             {
                 using (var cmd = Conectar().CreateCommand())
                 {
-                    cmd.CommandText = @"SELECT name FROM tests";
+                    cmd.CommandText = @"SELECT * FROM laudos";
                     da = new SQLiteDataAdapter(cmd.CommandText, Conectar());
                     da.Fill(dt);
                     return dt;
@@ -80,7 +80,7 @@ namespace ProjetoDocx
 
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Novo Laudo Cadastrado!");
+                MessageBox.Show("Novo Laudo Cadastrado!", "success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 DB.Conectar().Close();
             }
@@ -89,6 +89,53 @@ namespace ProjetoDocx
                 MessageBox.Show("Erro ao tentar cadastrar");
                 Console.WriteLine(ex.Message);
             }            
+        }
+
+        public static DataTable SelectFromSql(string arg)
+        {
+            string sql = arg;
+            DataTable dt = new DataTable();
+            //SQLiteDataAdapter da = new SQLiteDataAdapter();
+            //MessageBox.Show(sql);
+            try
+            {
+                var cmd = DB.Conectar().CreateCommand();
+                cmd.CommandText = sql;
+
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd.CommandText, Conectar());
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            
+        }
+
+        public static int MaxId()
+        {
+            string sql = @"SELECT MAX(id) FROM laudos";
+            DataTable dt = new DataTable();
+            try
+            {
+                var cmd = DB.Conectar().CreateCommand();
+                cmd.CommandText = sql;
+
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd.CommandText, Conectar());
+                da.Fill(dt);
+
+                int maxid = UInt16.Parse(dt.Rows[0].ItemArray[0].ToString());
+
+                return maxid;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return 0;
+            }
         }
     }
 }

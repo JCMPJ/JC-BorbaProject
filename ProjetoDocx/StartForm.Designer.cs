@@ -33,6 +33,7 @@
             this.arquivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoLaudoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pesquizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,8 @@
             // 
             // arquivosToolStripMenuItem
             // 
+            this.arquivosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sairToolStripMenuItem});
             this.arquivosToolStripMenuItem.Name = "arquivosToolStripMenuItem";
             this.arquivosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.arquivosToolStripMenuItem.Text = "Arquivos";
@@ -78,6 +81,13 @@
             this.pesquizarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.pesquizarToolStripMenuItem.Text = "Pesquizar";
             this.pesquizarToolStripMenuItem.Click += new System.EventHandler(this.pesquizarToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // StartForm
             // 
@@ -105,5 +115,6 @@
         private System.Windows.Forms.ToolStripMenuItem arquivosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novoLaudoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pesquizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }
