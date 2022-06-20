@@ -171,6 +171,14 @@ namespace ProjetoDocx
                     laudo.acompanhantesReclamada = nomes;
                 }
             }
+            /* Formato ("d") 25/3/2022 */
+            DateTime thisDay = DateTime.Today;
+            
+            Regex rgx = new Regex("/");
+            string data = rgx.Replace(thisDay.ToString("d"), "");
+
+            laudo.dataCriacao = thisDay.ToString("d");
+
             // Abre o documento no Word
             oWord.Visible = true;
 
@@ -192,13 +200,7 @@ namespace ProjetoDocx
             {
                 sequential_number = "0" + sequential_number;
             }
-
-            /* Formato ("d) 25/3/2022 */
-            DateTime thisDay = DateTime.Today;           
-            Console.WriteLine(thisDay.ToString("d"));
-            Regex rgx = new Regex("/");
-            string data = rgx.Replace(thisDay.ToString("d"), "");
-
+            
             /* Monta nome do documento número sequencial + número do processo + data no formato ddmmaaaa */
             string nome_doc = sequential_number + "-" + tbProcesso.Text.Replace(',', '.') + "-" + data + ".docx";
 
@@ -215,7 +217,7 @@ namespace ProjetoDocx
             try
             {
                 // Abre a janela Salvar Arquivo do Windows
-                // oDoc.Save(); 
+                // oDoc.Save();
                 oDoc.SaveAs2(path_str + nome_doc);
             }
             catch (Exception e)

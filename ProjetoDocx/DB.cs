@@ -28,7 +28,7 @@ namespace ProjetoDocx
         public static DataTable Listar()
         {
             DataTable dt = new DataTable();
-            SQLiteDataAdapter da = new SQLiteDataAdapter();
+            SQLiteDataAdapter da;
 
             try
             {
@@ -37,6 +37,30 @@ namespace ProjetoDocx
                     cmd.CommandText = @"SELECT * FROM laudos";
                     da = new SQLiteDataAdapter(cmd.CommandText, Conectar());
                     da.Fill(dt);
+
+                    return dt;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable SelectFromId(int id)
+        {
+            DataTable dt = new DataTable();
+            SQLiteDataAdapter da;
+
+            try
+            {
+                using (var cmd = Conectar().CreateCommand())
+                {
+                    cmd.CommandText = @"SELECT * FROM laudos WHERE id = '" + id + "'";
+                    da = new SQLiteDataAdapter(cmd.CommandText, Conectar());
+                    da.Fill(dt);
+
                     return dt;
                 }
 

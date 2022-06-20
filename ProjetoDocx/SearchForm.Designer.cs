@@ -34,14 +34,15 @@
             this.tbNomeProcurado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvLaudos = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numProcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeReclamante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeReclamada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditarLaudo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaudos)).BeginInit();
             this.SuspendLayout();
             // 
             // rbtnReclamada
@@ -104,23 +105,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // dataGridView2
+            // dgvLaudos
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLaudos.AllowUserToAddRows = false;
+            this.dgvLaudos.AllowUserToDeleteRows = false;
+            this.dgvLaudos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLaudos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.numProcesso,
             this.nomeReclamante,
             this.nomeReclamada,
             this.dataEmissao});
-            this.dataGridView2.Location = new System.Drawing.Point(319, 60);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(623, 354);
-            this.dataGridView2.TabIndex = 15;
+            this.dgvLaudos.Location = new System.Drawing.Point(319, 60);
+            this.dgvLaudos.MultiSelect = false;
+            this.dgvLaudos.Name = "dgvLaudos";
+            this.dgvLaudos.ReadOnly = true;
+            this.dgvLaudos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLaudos.Size = new System.Drawing.Size(623, 354);
+            this.dgvLaudos.TabIndex = 15;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // numProcesso
             // 
@@ -153,24 +163,25 @@
             this.dataEmissao.Name = "dataEmissao";
             this.dataEmissao.ReadOnly = true;
             // 
-            // button1
+            // btnEditarLaudo
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(449, 432);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(400, 40);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Editar Laudo";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEditarLaudo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEditarLaudo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarLaudo.Location = new System.Drawing.Point(578, 429);
+            this.btnEditarLaudo.Name = "btnEditarLaudo";
+            this.btnEditarLaudo.Size = new System.Drawing.Size(180, 40);
+            this.btnEditarLaudo.TabIndex = 16;
+            this.btnEditarLaudo.Text = "Editar Laudo";
+            this.btnEditarLaudo.UseVisualStyleBackColor = false;
+            this.btnEditarLaudo.Click += new System.EventHandler(this.btnEditarLaudo_Click);
             // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 481);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.btnEditarLaudo);
+            this.Controls.Add(this.dgvLaudos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbNomeProcurado);
@@ -180,9 +191,10 @@
             this.Name = "SearchForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laudo Pericial - Pesquizar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaudos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,11 +208,12 @@
         private System.Windows.Forms.TextBox tbNomeProcurado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvLaudos;
+        private System.Windows.Forms.Button btnEditarLaudo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn numProcesso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeReclamante;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeReclamada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEmissao;
-        private System.Windows.Forms.Button button1;
     }
 }
