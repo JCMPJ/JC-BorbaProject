@@ -33,5 +33,11 @@ namespace ProjetoDocx
         {
             Application.Exit();
         }
+
+        private void abrirDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirDocumento abrirDocumento = new AbrirDocumento();
+            abrirDocumento.ShowDialog();
+        }
     }
 }

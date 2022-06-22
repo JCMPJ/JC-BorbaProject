@@ -180,7 +180,7 @@ namespace ProjetoDocx
             laudo.dataCriacao = thisDay.ToString("d");
 
             // Abre o documento no Word
-            oWord.Visible = true;
+            //oWord.Visible = true;
 
             // Salva o novo laudo no banco de dados
             DB.CreateNew(laudo);
@@ -189,7 +189,7 @@ namespace ProjetoDocx
              * Montar o mone do arquivo último id gravado no banco mais um + número do processo +
              * data atual na forma ddmmaaa
              */
-            int aux = DB.MaxId() + 1;
+            int aux = DB.MaxId();
             string sequential_number = Convert.ToString(aux);
 
             if (aux < 10)
@@ -219,6 +219,8 @@ namespace ProjetoDocx
                 // Abre a janela Salvar Arquivo do Windows
                 // oDoc.Save();
                 oDoc.SaveAs2(path_str + nome_doc);
+                oWord.Visible = true;
+                oDoc = null;
             }
             catch (Exception e)
             {

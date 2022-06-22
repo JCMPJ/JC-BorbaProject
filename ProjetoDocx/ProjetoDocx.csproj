@@ -93,6 +93,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbrirDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbrirDocumento.Designer.cs">
+      <DependentUpon>AbrirDocumento.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Laudo.cs" />
     <Compile Include="ManageFiles.cs" />
@@ -128,6 +134,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AbrirDocumento.resx">
+      <DependentUpon>AbrirDocumento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditForm .resx">
       <DependentUpon>EditForm .cs</DependentUpon>
     </EmbeddedResource>

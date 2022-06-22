@@ -25,6 +25,15 @@ namespace ProjetoDocx
         Laudo laudo = new Laudo();
         private int id;
 
+        string sequential_number;
+        string numProcesso;
+        string dataCriacao;
+        string path;
+        string str_id;
+
+        string acompanhantesReclamada = null;
+        string acompanhantesReclamante= null;
+
         public EditForm(int arg)
         {
             InitializeComponent();
@@ -38,20 +47,27 @@ namespace ProjetoDocx
             if (dt.Rows.Count > 0)
             {
 
-                string str_id = dt.Rows[0].ItemArray[0].ToString();
-                tbProcesso.Text = dt.Rows[0].Field<string>("numProcesso");
+                str_id = dt.Rows[0].ItemArray[0].ToString();
+                Console.WriteLine("Id:..." + str_id);
+                numProcesso = dt.Rows[0].Field<string>("numProcesso");
+                tbProcesso.Text = numProcesso;
                 tbReclamante.Text = dt.Rows[0].Field<string>("nomeReclamante");
                 tbReclamada.Text = dt.Rows[0].Field<string>("nomeReclamada");
                 tbDataVistoria.Text = dt.Rows[0].Field<string>("dataVistoria");
                 tbHoraInicio.Text = dt.Rows[0].Field<string>("horaVistoria");
                 tbLocalVistoria.Text = dt.Rows[0].Field<string>("localVistoriado");
-                tbEndLocal.Text = dt.Rows[0].Field<string>("enderecoVistoriado");                
-                tbDataIniPeriodo.Text  = dt.Rows[0].Field<string>("dataInicioPeriodoReclamado");                
+                tbEndLocal.Text = dt.Rows[0].Field<string>("enderecoVistoriado");
+                tbDataIniPeriodo.Text = dt.Rows[0].Field<string>("dataInicioPeriodoReclamado");
                 tbDataFimPeriodo.Text = dt.Rows[0].Field<string>("dataFimPeriodoReclamado");
                 tbFuncaoExercida.Text = dt.Rows[0].Field<string>("funcaoExercida");
                 tbCidadeEmissao.Text = dt.Rows[0].Field<string>("cidadeEmissao");
                 tbDataEmissao.Text = dt.Rows[0].Field<string>("dataEmissao");
-                string dataCriacao = dt.Rows[0].Field<string>("dataCriacao");
+                dataCriacao = dt.Rows[0].Field<string>("dataCriacao");
+                acompanhantesReclamante = dt.Rows[0].Field<string>("acompanhantesReclamante");
+                acompanhantesReclamada = dt.Rows[0].Field<string>("acompanhantesReclamada");
+                
+                PreencherListaReclamantes();
+                PreencherListaReclamadas();
 
                 tbProcesso.Focus();
             }
@@ -62,24 +78,35 @@ namespace ProjetoDocx
 
         }
 
-        private bool InserirNaLista(TextBox tb, ListBox lb, List<string> lista)
+        private void PreencherListaReclamantes()
+        {            
+            acompanhantesReclamante = acompanhantesReclamante.Trim();
+            string[] nomes = acompanhantesReclamante.Split('\r');
+            
+            InserirNaLista(nomes, lboxReclamante, listAcReclamante);
+        }
+
+        private void PreencherListaReclamadas()
         {
-            if (!string.IsNullOrEmpty(tb.Text))
+            
+            acompanhantesReclamada = acompanhantesReclamada.Trim();
+            
+            string[] nomes = acompanhantesReclamada.Split('\r');
+
+            InserirNaLista(nomes, lboxReclamada, listAcReclamada);
+        }
+
+        private void InserirNaLista(string[] nomes, ListBox lb, List<string> lista)
+        {
+            string n;
+            foreach (string nome in nomes)
             {
-                lista.Add(tb.Text);
-                tb.Text = null;
-                tb.Focus();
+                n = nome.Trim();
+                lista.Add(n);
 
                 lb.DataSource = null;
                 lb.DataSource = lista;
-
-                return true;
             }
-            else
-            {
-                return false;
-            }
-
         }
 
         internal void EditarAcompanhante(string nome, string nomeAnterior, ListBox lb, List<string> lista)
@@ -143,6 +170,7 @@ namespace ProjetoDocx
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
+            /*
             if (e.KeyValue == 13)
             {
                 TextBox tb = (TextBox)sender;
@@ -156,21 +184,70 @@ namespace ProjetoDocx
                     this.InserirNaLista(tbTesReclamada, lboxReclamada, listAcReclamada);
                 }
             }
-        }
-
-        private void LboxAcompanhantesReclamante_Opening(object sender, CancelEventArgs e)
-        {
-
+            */
         }
 
         private void BTN_InsLwReclamante_Click(object sender, EventArgs e)
         {
-            this.InserirNaLista(tbTesReclamante, lboxReclamante, listAcReclamante);
+            // this.InserirNaLista(tbTesReclamante, lboxReclamante, listAcReclamante);
         }
 
         private void BTN_InsLwReclamada_Click(object sender, EventArgs e)
         {
-            this.InserirNaLista(tbTesReclamada, lboxReclamada, listAcReclamada);
+            // this.InserirNaLista(tbTesReclamada, lboxReclamada, listAcReclamada);
+        }
+
+        private void btnAbrirWord_Click(object sender, EventArgs e)
+        {
+            object oMissing = System.Reflection.Missing.Value;
+            string data = "";
+
+            //string str_id = dt.Rows[0].ItemArray[0].ToString();
+            //Int16 idBd = dt.Rows[0].Field<Int16>("id");
+            //sequential_number = Convert.ToString(id);
+            sequential_number = str_id.Trim();
+            int idBd = int.Parse(str_id);
+
+            if (idBd < 10)
+            {
+                sequential_number = "00" + sequential_number;
+            }
+            else if (idBd < 100)
+            {
+                sequential_number = "0" + sequential_number;
+            }
+            //numProcesso = dt.Rows[0].Field<string>("numProcesso");
+            //dataCriacao = dt.Rows[0].Field<string>("dataCriacao");
+            if (!string.IsNullOrEmpty(dataCriacao))
+            {
+                Regex rgx = new Regex("/");
+                data = rgx.Replace(dataCriacao, "");
+            }
+            else
+            {
+                MessageBox.Show("Erros dataCriacao: " + dataCriacao);
+                return;
+            }
+
+
+            //path = appPath + "\\laudos\\1234567-12.1234.1.15.5555\\" + "014-1234567-12.1234.1.15.5555-19062022.docx";
+            path = appPath + "\\laudos\\" + numProcesso + "\\" + sequential_number + "-" + numProcesso + "-" + data + ".docx";
+            Console.WriteLine("PATH:..." + path);
+
+            Word._Application oWord;
+            Word._Document oDoc;
+            oWord = new Word.Application();
+            if (File.Exists(path))
+            {
+                oDoc = oWord.Documents.Open(path, ReadOnly: true);
+                //oDoc.Activate();
+                oWord.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Erro o arquivo não foi encontrado!\n" + path);
+            }
+
         }
     }
 }

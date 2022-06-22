@@ -106,13 +106,11 @@
             // 
             // tbReclamante
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.tbReclamante, 3);
             resources.ApplyResources(this.tbReclamante, "tbReclamante");
             this.tbReclamante.Name = "tbReclamante";
             // 
             // tbReclamada
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.tbReclamada, 3);
             resources.ApplyResources(this.tbReclamada, "tbReclamada");
             this.tbReclamada.Name = "tbReclamada";
             // 
@@ -133,7 +131,6 @@
             // 
             // tbLocalVistoria
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.tbLocalVistoria, 3);
             resources.ApplyResources(this.tbLocalVistoria, "tbLocalVistoria");
             this.tbLocalVistoria.Name = "tbLocalVistoria";
             // 
@@ -296,7 +293,6 @@
             this.lboxAcompanhantesReclamante.Name = "contextMenuStrip1";
             this.lboxAcompanhantesReclamante.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             resources.ApplyResources(this.lboxAcompanhantesReclamante, "lboxAcompanhantesReclamante");
-            this.lboxAcompanhantesReclamante.Opening += new System.ComponentModel.CancelEventHandler(this.LboxAcompanhantesReclamante_Opening);
             this.lboxAcompanhantesReclamante.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.CMSI_EditarRemoverReclamante);
             // 
             // smEditar
@@ -378,6 +374,7 @@
             resources.ApplyResources(this.btnAbrirWord, "btnAbrirWord");
             this.btnAbrirWord.Name = "btnAbrirWord";
             this.btnAbrirWord.UseVisualStyleBackColor = false;
+            this.btnAbrirWord.Click += new System.EventHandler(this.btnAbrirWord_Click);
             // 
             // EditForm
             // 
@@ -395,9 +392,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnMontar);
             this.Name = "EditForm";
-            this.Activated += new System.EventHandler(this.Inicio);
             this.Load += new System.EventHandler(this.Inicio);
-            this.Enter += new System.EventHandler(this.Inicio);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.lboxAcompanhantesReclamante.ResumeLayout(false);

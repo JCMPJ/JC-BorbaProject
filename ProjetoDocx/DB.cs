@@ -51,19 +51,17 @@ namespace ProjetoDocx
         public static DataTable SelectFromId(int id)
         {
             DataTable dt = new DataTable();
-            SQLiteDataAdapter da;
+            //SQLiteDataAdapter da;
 
             try
-            {
-                using (var cmd = Conectar().CreateCommand())
-                {
-                    cmd.CommandText = @"SELECT * FROM laudos WHERE id = '" + id + "'";
-                    da = new SQLiteDataAdapter(cmd.CommandText, Conectar());
-                    da.Fill(dt);
-
-                    return dt;
-                }
-
+            {                
+                var db = DB.Conectar();
+                SQLiteCommand cmd = db.CreateCommand();
+                cmd.CommandText = @"SELECT * FROM laudos WHERE id = '" + id + "'";
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd.CommandText, Conectar());
+                da.Fill(dt);
+                
+                return dt;
             }
             catch (Exception ex)
             {
@@ -79,13 +77,13 @@ namespace ProjetoDocx
 
                 string sql = "INSERT INTO laudos (" +
                     "numProcesso, nomeReclamante, nomeReclamada, dataVistoria, horaVistoria, localVistoriado, " +
-                    "enderecoVistoriado, dataInicioPeriodoReclamado, dataFimPeriodoReclamado, " +                    
-                    "funcaoExercida, cidadeEmissao, dataEmissao, " +
+                    "enderecoVistoriado, dataInicioPeriodoReclamado, dataFimPeriodoReclamado, " +
+                    "funcaoExercida, cidadeEmissao, dataEmissao, dataCriacao, " +
                     "acompanhantesReclamante, acompanhantesReclamada) " +
                     "VALUES (" +
                     "@numProcesso, @nomeReclamante, @nomeReclamada, @dataVistoria, @horaVistoria, @localVistoriado, " +
                     "@enderecoVistoriado, @dataInicioPeriodoReclamado, @dataFimPeriodoReclamado, " +
-                    "@funcaoExercida, @cidadeEmissao, @dataEmissao, @acompanhantesReclamante, @acompanhantesReclamada)";
+                    "@funcaoExercida, @cidadeEmissao, @dataEmissao, @dataCriacao, @acompanhantesReclamante, @acompanhantesReclamada)";
                 cmd.CommandText = sql;
                 cmd.Parameters.AddWithValue("@numProcesso", laudo.numProcesso);
                 cmd.Parameters.AddWithValue("@nomeReclamante", laudo.nomeReclamante);
@@ -99,8 +97,10 @@ namespace ProjetoDocx
                 cmd.Parameters.AddWithValue("@funcaoExercida", laudo.funcaoExercida);
                 cmd.Parameters.AddWithValue("@cidadeEmissao", laudo.cidadeEmissao);
                 cmd.Parameters.AddWithValue("@dataEmissao", laudo.dataEmissao);
+                cmd.Parameters.AddWithValue("@dataCriacao", laudo.dataCriacao);
                 cmd.Parameters.AddWithValue("@acompanhantesReclamante", laudo.acompanhantesReclamante);
                 cmd.Parameters.AddWithValue("@acompanhantesReclamada", laudo.acompanhantesReclamada);
+                
 
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
@@ -108,11 +108,11 @@ namespace ProjetoDocx
 
                 DB.Conectar().Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao tentar cadastrar");
                 Console.WriteLine(ex.Message);
-            }            
+            }
         }
 
         public static DataTable SelectFromSql(string arg)
@@ -131,12 +131,12 @@ namespace ProjetoDocx
 
                 return dt;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return null;
             }
-            
+
         }
 
         public static int MaxId()
