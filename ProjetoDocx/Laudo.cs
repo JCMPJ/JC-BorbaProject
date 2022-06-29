@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using Xceed.Words.NET;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace ProjetoDocx
 {
@@ -25,8 +25,6 @@ namespace ProjetoDocx
         public string acompanhantesReclamante;
         public string acompanhantesReclamada;
         public string dataCriacao;
-
-        private static SQLiteConnection conn;
 
         public Laudo() { }
     }

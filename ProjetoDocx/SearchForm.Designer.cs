@@ -55,6 +55,7 @@
             this.rbtnReclamada.TabStop = true;
             this.rbtnReclamada.Text = "Reclamada";
             this.rbtnReclamada.UseVisualStyleBackColor = true;
+            this.rbtnReclamada.Click += new System.EventHandler(this.BTN_BuscarPor_Alterado);
             // 
             // rbtnReclamante
             // 
@@ -66,6 +67,7 @@
             this.rbtnReclamante.TabStop = true;
             this.rbtnReclamante.Text = "Reclamante";
             this.rbtnReclamante.UseVisualStyleBackColor = true;
+            this.rbtnReclamante.Click += new System.EventHandler(this.BTN_BuscarPor_Alterado);
             // 
             // label2
             // 
@@ -83,7 +85,7 @@
             this.tbNomeProcurado.Name = "tbNomeProcurado";
             this.tbNomeProcurado.Size = new System.Drawing.Size(240, 23);
             this.tbNomeProcurado.TabIndex = 8;
-            this.tbNomeProcurado.TextChanged += new System.EventHandler(this.Searchdb);
+            this.tbNomeProcurado.TextChanged += new System.EventHandler(this.TB_NomeProcurado_TextChange);
             // 
             // label1
             // 
@@ -109,6 +111,8 @@
             // 
             this.dgvLaudos.AllowUserToAddRows = false;
             this.dgvLaudos.AllowUserToDeleteRows = false;
+            this.dgvLaudos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLaudos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLaudos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLaudos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -117,11 +121,12 @@
             this.nomeReclamada,
             this.dataEmissao});
             this.dgvLaudos.Location = new System.Drawing.Point(319, 60);
+            this.dgvLaudos.MaximumSize = new System.Drawing.Size(1600, 900);
             this.dgvLaudos.MultiSelect = false;
             this.dgvLaudos.Name = "dgvLaudos";
             this.dgvLaudos.ReadOnly = true;
             this.dgvLaudos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLaudos.Size = new System.Drawing.Size(623, 354);
+            this.dgvLaudos.Size = new System.Drawing.Size(623, 363);
             this.dgvLaudos.TabIndex = 15;
             // 
             // Id
@@ -138,7 +143,6 @@
             this.numProcesso.HeaderText = "Nº Processo";
             this.numProcesso.Name = "numProcesso";
             this.numProcesso.ReadOnly = true;
-            this.numProcesso.Width = 150;
             // 
             // nomeReclamante
             // 
@@ -146,7 +150,6 @@
             this.nomeReclamante.HeaderText = "Reclamante";
             this.nomeReclamante.Name = "nomeReclamante";
             this.nomeReclamante.ReadOnly = true;
-            this.nomeReclamante.Width = 200;
             // 
             // nomeReclamada
             // 
@@ -154,7 +157,6 @@
             this.nomeReclamada.HeaderText = "Reclamada";
             this.nomeReclamada.Name = "nomeReclamada";
             this.nomeReclamada.ReadOnly = true;
-            this.nomeReclamada.Width = 200;
             // 
             // dataEmissao
             // 
@@ -179,6 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(944, 481);
             this.Controls.Add(this.btnEditarLaudo);
             this.Controls.Add(this.dgvLaudos);

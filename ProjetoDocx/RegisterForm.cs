@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xceed.Words.NET;
 using Word = Microsoft.Office.Interop.Word;
@@ -208,7 +201,7 @@ namespace ProjetoDocx
              * Caminho da aplicação + \laudos\ + número do precesso
              * (homepag + "\\Documents\\laudos\\)
              */
-            string str_path = appPath + "\\laudos\\" + tbProcesso.Text.Replace(',', '.') + "\\";
+            string str_path = homepag + "\\laudos\\" + tbProcesso.Text.Replace(',', '.') + "\\";
 
             /* Caso a pasta não exista cria */
             string path_str = ManageFiles.CreateDirectories(str_path);

@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoLaudoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pesquizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,13 @@
             this.arquivosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.arquivosToolStripMenuItem.Text = "Arquivos";
             // 
+            // abrirDocumentoToolStripMenuItem
+            // 
+            this.abrirDocumentoToolStripMenuItem.Name = "abrirDocumentoToolStripMenuItem";
+            this.abrirDocumentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirDocumentoToolStripMenuItem.Text = "Novo";
+            this.abrirDocumentoToolStripMenuItem.Click += new System.EventHandler(this.abrirDocumentoToolStripMenuItem_Click);
+            // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
@@ -90,13 +97,6 @@
             this.pesquizarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.pesquizarToolStripMenuItem.Text = "Pesquizar";
             this.pesquizarToolStripMenuItem.Click += new System.EventHandler(this.pesquizarToolStripMenuItem_Click);
-            // 
-            // abrirDocumentoToolStripMenuItem
-            // 
-            this.abrirDocumentoToolStripMenuItem.Name = "abrirDocumentoToolStripMenuItem";
-            this.abrirDocumentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.abrirDocumentoToolStripMenuItem.Text = "Abrir Documento";
-            this.abrirDocumentoToolStripMenuItem.Click += new System.EventHandler(this.abrirDocumentoToolStripMenuItem_Click);
             // 
             // StartForm
             // 

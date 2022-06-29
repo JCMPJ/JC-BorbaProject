@@ -36,8 +36,10 @@ namespace ProjetoDocx
 
         private void abrirDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirDocumento abrirDocumento = new AbrirDocumento();
-            abrirDocumento.ShowDialog();
+            //AbrirDocumento abrirDocumento = new AbrirDocumento();
+            //abrirDocumento.ShowDialog();
+            RegisterForm form1 = new RegisterForm();
+            form1.ShowDialog();
         }
     }
 }

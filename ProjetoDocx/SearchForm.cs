@@ -29,7 +29,7 @@ namespace ProjetoDocx
             rbtnReclamante.Checked = true;
         }
 
-        private void Searchdb(object sender, EventArgs e)
+        private void Searchdb()
         {
             string campo = "";
             string nome = "";
@@ -93,6 +93,28 @@ namespace ProjetoDocx
                 return;
             }
             // MessageBox.Show(sql);
+        }
+
+        private void TB_NomeProcurado_TextChange(object sender, EventArgs e)
+        {
+            string nome = "";
+
+            nome = tbNomeProcurado.Text.Trim();
+            if (!string.IsNullOrEmpty(nome))
+            {
+                Searchdb();
+            }
+        }
+
+        private void BTN_BuscarPor_Alterado(object sender, EventArgs e)
+        {
+            string nome = "";
+
+            nome = tbNomeProcurado.Text.Trim();
+            if (!string.IsNullOrEmpty(nome))
+            {
+                Searchdb();
+            }
         }
 
         private void btnEditarLaudo_Click(object sender, EventArgs e)
