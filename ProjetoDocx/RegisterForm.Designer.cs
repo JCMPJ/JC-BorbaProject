@@ -105,7 +105,6 @@
             // 
             // tbReclamante
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.tbReclamante, 3);
             resources.ApplyResources(this.tbReclamante, "tbReclamante");
             this.tbReclamante.Name = "tbReclamante";
             // 
@@ -284,6 +283,7 @@
             this.lboxReclamante.FormattingEnabled = true;
             resources.ApplyResources(this.lboxReclamante, "lboxReclamante");
             this.lboxReclamante.Name = "lboxReclamante";
+            this.lboxReclamante.TabStop = false;
             // 
             // lboxAcompanhantesReclamante
             // 
@@ -324,6 +324,7 @@
             this.lboxReclamada.FormattingEnabled = true;
             resources.ApplyResources(this.lboxReclamada, "lboxReclamada");
             this.lboxReclamada.Name = "lboxReclamada";
+            this.lboxReclamada.TabStop = false;
             // 
             // lboxAcompanhantesReclamada
             // 

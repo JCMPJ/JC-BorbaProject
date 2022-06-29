@@ -237,6 +237,27 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="tbReclamante.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 27</value>
+  </data>
+  <data name="tbReclamante.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 20</value>
+  </data>
+  <data name="tbReclamante.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;tbReclamante.Name" xml:space="preserve">
+    <value>tbReclamante</value>
+  </data>
+  <data name="&gt;&gt;tbReclamante.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbReclamante.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tbReclamante.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -296,27 +317,6 @@
   </data>
   <data name="&gt;&gt;tbProcesso.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="tbReclamada.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 51</value>
-  </data>
-  <data name="tbReclamada.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 20</value>
-  </data>
-  <data name="tbReclamada.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tbReclamada.Name" xml:space="preserve">
-    <value>tbReclamada</value>
-  </data>
-  <data name="&gt;&gt;tbReclamada.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbReclamada.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tbReclamada.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="tbDataVistoria.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -817,28 +817,28 @@
     <value>11</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label13" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbProcesso" Row="0" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbReclamante" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbReclamada" Row="2" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbDataVistoria" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tbHoraInicio" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbLocalVistoria" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbEndLocal" Row="6" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="label4" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbDataIniPeriodo" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbDataEmissao" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbCidadeEmissao" Row="10" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbDataFimPeriodo" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Funcao" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbFuncaoExercida" Row="8" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,117,Absolute,83,Absolute,30,Absolute,120" /&gt;&lt;Rows Styles="Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label13" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbProcesso" Row="0" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbReclamante" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tbReclamada" Row="2" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbDataVistoria" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tbHoraInicio" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbLocalVistoria" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbEndLocal" Row="6" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="label4" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbDataIniPeriodo" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label9" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbDataEmissao" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbCidadeEmissao" Row="10" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="tbDataFimPeriodo" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Funcao" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tbFuncaoExercida" Row="8" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,117,Absolute,83,Absolute,30,Absolute,120" /&gt;&lt;Rows Styles="Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24,Absolute,24" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="tbReclamante.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 27</value>
+  <data name="tbReclamada.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 51</value>
   </data>
-  <data name="tbReclamante.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tbReclamada.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 20</value>
   </data>
-  <data name="tbReclamante.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="tbReclamada.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;tbReclamante.Name" xml:space="preserve">
-    <value>tbReclamante</value>
+  <data name="&gt;&gt;tbReclamada.Name" xml:space="preserve">
+    <value>tbReclamada</value>
   </data>
-  <data name="&gt;&gt;tbReclamante.Type" xml:space="preserve">
+  <data name="&gt;&gt;tbReclamada.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tbReclamante.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tbReclamada.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;tbReclamante.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;tbReclamada.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="tbTesReclamante.Location" type="System.Drawing.Point, System.Drawing">
     <value>400, 78</value>

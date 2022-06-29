@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoDocx", "ProjetoDocx\ProjetoDocx.csproj", "{7F52113A-F47C-4921-8904-E9425510F417}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoBreno", "ProjetoDocx\ProjetoBreno.csproj", "{7F52113A-F47C-4921-8904-E9425510F417}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

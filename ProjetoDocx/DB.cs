@@ -17,7 +17,7 @@ namespace ProjetoDocx
 
         public static SQLiteConnection Conectar()
         {
-            string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+            string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             string connString = "Data Source=" + appPath + "\\dbdocX.db";
 
             conn = new SQLiteConnection(connString);
