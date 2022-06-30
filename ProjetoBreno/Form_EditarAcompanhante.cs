@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoDocx
+namespace ProjetoBreno
 {
     public partial class Form_EditarAcompanhante : Form
     {

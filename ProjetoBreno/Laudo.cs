@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Xceed.Words.NET;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace ProjetoDocx
+namespace ProjetoBreno
 {
     class Laudo
     {

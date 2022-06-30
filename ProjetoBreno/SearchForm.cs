@@ -13,7 +13,7 @@ using Microsoft.Data.Sqlite;
 using Word = Microsoft.Office.Interop.Word;
 using System.Text.RegularExpressions;
 
-namespace ProjetoDocx
+namespace ProjetoBreno
 {
     public partial class SearchForm : Form
     {
@@ -68,24 +68,26 @@ namespace ProjetoDocx
                 
                 dt = DB.SelectFromSql(sql);
                 //dt = DB.Listar();
-
-                if (dt.Rows.Count > 0)
+                if (!Object.ReferenceEquals(dt, null))
                 {
-                    // Method 1 - direct method
-                    // dataGridView1.DataSource = dt;
+                    if (dt.Rows.Count > 0)
+                    {
+                        // Method 1 - direct method
+                        // dataGridView1.DataSource = dt;
 
-                    // Method 2 - DG Columns
-                    // dataGridView2.Columns[0].Visible = false;
-                    dgvLaudos.AutoGenerateColumns = false;
-                    dgvLaudos.DataSource = dt;
-                }
-                else
-                {
-                    // dataGridView2.Rows.Clear();
-                    // dataGridView2.Refresh();
-                    dt.Clear();
-                    dgvLaudos.DataSource = dt;
-                }
+                        // Method 2 - DG Columns
+                        // dataGridView2.Columns[0].Visible = false;
+                        dgvLaudos.AutoGenerateColumns = false;
+                        dgvLaudos.DataSource = dt;
+                    }
+                    else
+                    {
+                        // dataGridView2.Rows.Clear();
+                        // dataGridView2.Refresh();
+                        dt.Clear();
+                        dgvLaudos.DataSource = dt;
+                    }
+                }                
             }
             else
             {
@@ -207,6 +209,11 @@ namespace ProjetoDocx
                 flag = false;
             }
             
+        }
+
+        private void LB_Voltar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

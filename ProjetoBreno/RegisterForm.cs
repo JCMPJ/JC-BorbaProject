@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Xceed.Words.NET;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace ProjetoDocx
+namespace ProjetoBreno
 {
     public partial class RegisterForm : Form
     {
@@ -26,7 +26,7 @@ namespace ProjetoDocx
         private void BtnMontar_Click(object sender, EventArgs e)
         {
             string tx;
-            string path = Directory.GetCurrentDirectory();
+            // string path = Directory.GetCurrentDirectory();
             /*
             string nprocesso;
             string nomeReclamante;
@@ -37,7 +37,7 @@ namespace ProjetoDocx
             */            
             try
             {
-                using (DocX documento = DocX.Load(path + "\\modelo-v01.docx"))
+                using (DocX documento = DocX.Load(appPath + "\\modelo-v01.docx"))
                 {
                     tx = tbProcesso.Text;
                     laudo.numProcesso = tx.Replace(',', '.');
@@ -88,7 +88,7 @@ namespace ProjetoDocx
                         documento.ReplaceText("#localDataEmissao", data);
                     }
 
-                    documento.SaveAs(path + "\\novo-documento.docx");
+                    documento.SaveAs(appPath + "\\novo-documento.docx");
                 }
             }
             catch (Exception ex)
@@ -114,8 +114,8 @@ namespace ProjetoDocx
             object oMissing = System.Reflection.Missing.Value;
 
             // string appPath = Path.GetDirectoryName(Application.ExecutablePath);
-            string path = Directory.GetCurrentDirectory();
-            string c = path + "\\novo-documento.docx";
+            // string path = Directory.GetCurrentDirectory();
+            string c = appPath + "\\novo-documento.docx";
             object oTemplate = c;
 
             Word._Application oWord;
@@ -335,9 +335,9 @@ namespace ProjetoDocx
             tbProcesso.Focus();
         }
 
-        private void LboxAcompanhantesReclamante_Opening(object sender, CancelEventArgs e)
+        private void LB_Voltar_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

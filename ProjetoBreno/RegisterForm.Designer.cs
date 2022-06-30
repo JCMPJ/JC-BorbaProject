@@ -1,4 +1,4 @@
-﻿namespace ProjetoDocx
+﻿namespace ProjetoBreno
 {
     partial class RegisterForm
     {
@@ -74,6 +74,7 @@
             this.lb_Reclamante = new System.Windows.Forms.Label();
             this.lb_Reclamada = new System.Windows.Forms.Label();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.LB_Voltar = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.lboxAcompanhantesReclamante.SuspendLayout();
             this.lboxAcompanhantesReclamada.SuspendLayout();
@@ -110,7 +111,6 @@
             // 
             // tbReclamada
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.tbReclamada, 3);
             resources.ApplyResources(this.tbReclamada, "tbReclamada");
             this.tbReclamada.Name = "tbReclamada";
             // 
@@ -257,7 +257,7 @@
             // 
             // btnInsLwReclamante
             // 
-            this.btnInsLwReclamante.Image = global::ProjetoDocx.Properties.Resources.icons8_arrows_24;
+            this.btnInsLwReclamante.Image = global::ProjetoBreno.Properties.Resources.icons8_arrows_24;
             resources.ApplyResources(this.btnInsLwReclamante, "btnInsLwReclamante");
             this.btnInsLwReclamante.Name = "btnInsLwReclamante";
             this.btnInsLwReclamante.UseVisualStyleBackColor = true;
@@ -265,7 +265,7 @@
             // 
             // btnInsLwReclamada
             // 
-            this.btnInsLwReclamada.Image = global::ProjetoDocx.Properties.Resources.icons8_arrows_24;
+            this.btnInsLwReclamada.Image = global::ProjetoBreno.Properties.Resources.icons8_arrows_24;
             resources.ApplyResources(this.btnInsLwReclamada, "btnInsLwReclamada");
             this.btnInsLwReclamada.Name = "btnInsLwReclamada";
             this.btnInsLwReclamada.UseVisualStyleBackColor = true;
@@ -295,7 +295,6 @@
             this.lboxAcompanhantesReclamante.Name = "contextMenuStrip1";
             this.lboxAcompanhantesReclamante.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             resources.ApplyResources(this.lboxAcompanhantesReclamante, "lboxAcompanhantesReclamante");
-            this.lboxAcompanhantesReclamante.Opening += new System.ComponentModel.CancelEventHandler(this.LboxAcompanhantesReclamante_Opening);
             this.lboxAcompanhantesReclamante.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.CMSI_EditarRemoverReclamante);
             // 
             // smEditar
@@ -372,10 +371,18 @@
             resources.ApplyResources(this.contextMenuStrip2, "contextMenuStrip2");
             this.contextMenuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.CMSI_EditarRemoverReclamada);
             // 
+            // LB_Voltar
+            // 
+            resources.ApplyResources(this.LB_Voltar, "LB_Voltar");
+            this.LB_Voltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LB_Voltar.Name = "LB_Voltar";
+            this.LB_Voltar.Click += new System.EventHandler(this.LB_Voltar_Click);
+            // 
             // RegisterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LB_Voltar);
             this.Controls.Add(this.lb_Reclamada);
             this.Controls.Add(this.lb_Reclamante);
             this.Controls.Add(this.lboxReclamada);
@@ -445,6 +452,7 @@
         private System.Windows.Forms.ToolStripMenuItem editarReclamada;
         private System.Windows.Forms.ToolStripMenuItem excluirReclamada;
         private System.Windows.Forms.ToolStripMenuItem smEditar;
+        private System.Windows.Forms.Label LB_Voltar;
     }
 }
 

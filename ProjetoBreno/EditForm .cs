@@ -7,13 +7,13 @@ using System.Windows.Forms;
 using Xceed.Words.NET;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace ProjetoDocx
+namespace ProjetoBreno
 {
     public partial class EditForm : Form
     {
         readonly List<string> listAcReclamante = new List<string>();
         readonly List<string> listAcReclamada = new List<string>();
-        readonly string homepag = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        readonly string homepag = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents";
         readonly string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
         Laudo laudo = new Laudo();
         private int id;

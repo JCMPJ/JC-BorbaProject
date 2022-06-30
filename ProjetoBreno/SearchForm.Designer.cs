@@ -1,4 +1,4 @@
-﻿namespace ProjetoDocx
+﻿namespace ProjetoBreno
 {
     partial class SearchForm
     {
@@ -41,6 +41,7 @@
             this.nomeReclamada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditarLaudo = new System.Windows.Forms.Button();
+            this.LB_Voltar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaudos)).BeginInit();
             this.SuspendLayout();
@@ -177,12 +178,26 @@
             this.btnEditarLaudo.UseVisualStyleBackColor = false;
             this.btnEditarLaudo.Click += new System.EventHandler(this.btnEditarLaudo_Click);
             // 
+            // LB_Voltar
+            // 
+            this.LB_Voltar.AutoSize = true;
+            this.LB_Voltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LB_Voltar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.LB_Voltar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LB_Voltar.Location = new System.Drawing.Point(10, 10);
+            this.LB_Voltar.Name = "LB_Voltar";
+            this.LB_Voltar.Size = new System.Drawing.Size(73, 19);
+            this.LB_Voltar.TabIndex = 39;
+            this.LB_Voltar.Text = "VOLTAR";
+            this.LB_Voltar.Click += new System.EventHandler(this.LB_Voltar_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(944, 481);
+            this.Controls.Add(this.LB_Voltar);
             this.Controls.Add(this.btnEditarLaudo);
             this.Controls.Add(this.dgvLaudos);
             this.Controls.Add(this.groupBox1);
@@ -218,5 +233,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeReclamante;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeReclamada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEmissao;
+        private System.Windows.Forms.Label LB_Voltar;
     }
 }

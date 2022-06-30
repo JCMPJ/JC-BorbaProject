@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoDocx.Properties {
+namespace ProjetoBreno.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ProjetoDocx.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProjetoDocx.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProjetoBreno.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -66,6 +66,16 @@ namespace ProjetoDocx.Properties {
         internal static System.Drawing.Bitmap icons8_arrows_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-arrows-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_JC {
+            get {
+                object obj = ResourceManager.GetObject("logo_JC", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

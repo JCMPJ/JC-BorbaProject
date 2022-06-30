@@ -1,4 +1,4 @@
-﻿namespace ProjetoDocx
+﻿namespace ProjetoBreno
 {
     partial class EditForm
     {
@@ -256,7 +256,7 @@
             // 
             // btnInsLwReclamante
             // 
-            this.btnInsLwReclamante.Image = global::ProjetoDocx.Properties.Resources.icons8_arrows_24;
+            this.btnInsLwReclamante.Image = global::ProjetoBreno.Properties.Resources.icons8_arrows_24;
             resources.ApplyResources(this.btnInsLwReclamante, "btnInsLwReclamante");
             this.btnInsLwReclamante.Name = "btnInsLwReclamante";
             this.btnInsLwReclamante.UseVisualStyleBackColor = true;
@@ -264,7 +264,7 @@
             // 
             // btnInsLwReclamada
             // 
-            this.btnInsLwReclamada.Image = global::ProjetoDocx.Properties.Resources.icons8_arrows_24;
+            this.btnInsLwReclamada.Image = global::ProjetoBreno.Properties.Resources.icons8_arrows_24;
             resources.ApplyResources(this.btnInsLwReclamada, "btnInsLwReclamada");
             this.btnInsLwReclamada.Name = "btnInsLwReclamada";
             this.btnInsLwReclamada.UseVisualStyleBackColor = true;

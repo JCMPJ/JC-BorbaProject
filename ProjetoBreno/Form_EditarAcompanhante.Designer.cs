@@ -1,4 +1,4 @@
-﻿namespace ProjetoDocx
+﻿namespace ProjetoBreno
 {
     partial class Form_EditarAcompanhante
     {

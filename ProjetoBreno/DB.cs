@@ -9,7 +9,7 @@ using System.Data.SQLite;
 using Microsoft.Data.Sqlite;
 using System.Windows.Forms;
 
-namespace ProjetoDocx
+namespace ProjetoBreno
 {
     class DB
     {
@@ -19,7 +19,7 @@ namespace ProjetoDocx
         {
             string appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             string connString = "Data Source=" + appPath + "\\dbdocX.db";
-
+            Console.WriteLine("ConnString:... " + connString);
             conn = new SQLiteConnection(connString);
             conn.Open();
             return conn;

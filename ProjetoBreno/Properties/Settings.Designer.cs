@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoDocx.Properties
+namespace ProjetoBreno.Properties
 {
 
 

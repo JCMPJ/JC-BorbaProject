@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoDocx
+namespace ProjetoBreno
 {
     public partial class StartForm : Form
     {
@@ -40,6 +40,12 @@ namespace ProjetoDocx
             //abrirDocumento.ShowDialog();
             RegisterForm form1 = new RegisterForm();
             form1.ShowDialog();
+        }
+
+        private void procurarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchForm searchForm = new SearchForm();
+            searchForm.ShowDialog();
         }
     }
 }
